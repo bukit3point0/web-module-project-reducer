@@ -11,6 +11,7 @@ import {
     // addTogether,
     // subtractTogether,
     // multiplyTogether,
+    changeOperation,
     applyNumber,
     clear,
     clearMemory,
@@ -35,7 +36,7 @@ function App() {
   }
 
   const switchFunction = (value) => {
-    state.operation = value.target.innerText
+    dispatch(changeOperation(value))
   }
 
   const mathStuff = (num) => {
@@ -44,7 +45,7 @@ function App() {
     // console.log(value.target.innerText)
     console.log(state.operation)
   }
-
+  
 
   return (
     <div className="App">
@@ -86,10 +87,16 @@ function App() {
               <CalcButton onClick={() => mathStuff(9)} value={9}/>
             </div>
 
-            <div className="row">
+            {/* <div className="row">
               <CalcButton onClick={switchFunction} value={"+"}/>
               <CalcButton onClick={switchFunction} value={"*"}/>
               <CalcButton onClick={switchFunction} value={"-"}/>
+            </div> */}
+            
+            <div className="row">
+              <CalcButton onClick={() => switchFunction("+")} value={"+"}/>
+              <CalcButton onClick={() => switchFunction("*")} value={"*"}/>
+              <CalcButton onClick={() => switchFunction("-")} value={"-"}/>
             </div>
 
             <div className="row ce_button">

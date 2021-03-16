@@ -26,6 +26,10 @@ const addOne = () => {
 //     return ({operation: MULTIPLY})
 // }
 
+const changeOperation = (operation) => {
+    return({type: CHANGE_OPERATION, payload: operation})
+}
+
 const applyNumber = (number) => {
     return({type: APPLY_NUMBER, payload:number});
 }
@@ -46,6 +50,7 @@ export {addOne,
     // addTogether,
     // subtractTogether,
     // multiplyTogether,
+    changeOperation,
     applyNumber,
     clear,
     clearMemory,
